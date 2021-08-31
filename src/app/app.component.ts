@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
+import { UrinalysisComponent } from './reports/urinalysis/urinalysis.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'krushna-pathalogy';
+  title = 'Krushna Pathalogy';
+  selectedReport : String = "";
+
+  constructor(private resolver: ComponentFactoryResolver) {
+
+  }
+
+  receiveSelectedReport(selectedReport: String) {  
+      this.selectedReport = selectedReport;
+  }  
+
 }

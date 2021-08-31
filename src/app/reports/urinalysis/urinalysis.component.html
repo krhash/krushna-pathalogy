@@ -1,0 +1,106 @@
+<div class="card">
+  <div class="card-body">
+    <form #urinalysisForm="ngForm" (ngSubmit)="saveToPDF(urinalysisForm.value)">
+      <h6 class="heading-boxed" style="text-align:center">Patient Details</h6>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="name">Name</label>
+          <input type="text" ngModel id="name" name="name" class="form-control" placeholder="Patient's name" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="referredBy">Referred By</label>
+          <input type="text" ngModel id="referredBy" name="referredBy" class="form-control" placeholder="Doctor's name" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="date">Date</label>
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+              id="date" name="date" ngModel ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
+        </div>
+      </div>
+      <br>
+    
+      <h6 class="heading-boxed" style="text-align:center">Physical Examination</h6>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="generalFeatures">General Features</label>
+          <input type="text" ngModel id="generalFeatures" name="generalFeatures" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="ph">pH</label>
+          <input type="text" ngModel id="ph" name="ph" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="specificGravity">Specific Gravity</label>
+          <input type="text" ngModel id="specificGravity" name="specificGravity" class="form-control" required>
+        </div>
+      </div>
+      <br>
+    
+      <h6 class="heading-boxed" style="text-align:center">Chemical Examination</h6>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="albium">Albium</label>
+          <input type="text" ngModel id="albium" name="albium" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="sugar">Sugar</label>
+          <input type="text" ngModel id="sugar" name="sugar" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="bileSalts">Bile Salts</label>
+          <input type="text" ngModel id="bileSalts" name="bileSalts" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="bilirubin">Bilirubin</label>
+          <input type="text" ngModel id="bilirubin" name="bilirubin" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="urobilinogen">Urobilinogen</label>
+          <input type="text" ngModel id="urobilinogen" name="urobilinogen" class="form-control" required>
+        </div>
+      </div>
+      <br>
+    
+      <h6 class="heading-boxed" style="text-align:center">Microscopic Examination</h6>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="redCells">Red Cells</label>
+          <input type="text" ngModel id="redCells" name="redCells" class="form-control" placeholder="/H.P.F" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="pusCells">Pus Cells</label>
+          <input type="text" ngModel id="pusCells" name="pusCells" class="form-control" placeholder="/H.P.F" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="epithelialCells">Epithelial Cells</label>
+          <input type="text" ngModel id="epithelialCells" name="epithelialCells" class="form-control" placeholder="/H.P.F" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="casts">Casts</label>
+          <input type="text" ngModel id="casts" name="casts" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="crystals">Crystals</label>
+          <input type="text" ngModel id="crystals" name="crystals" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="otherFindings">Other Findings</label>
+          <input type="text" ngModel id="otherFindings" name="otherFindings" class="form-control" required>
+        </div>
+      </div>
+      <br>
+    
+      <Button type="submit" class="btn btn-success" style="float: right;">Save</Button>
+    
+    </form>
+  </div>
+</div>
