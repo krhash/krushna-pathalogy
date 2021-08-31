@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-body">
+      <form #sugarForm="ngForm" (ngSubmit)="saveToPDF(sugarForm.value)">
+        <h6 class="heading-boxed" style="text-align:center">Patient Details</h6>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="name">Name</label>
+            <input type="text" ngModel id="name" name="name" class="form-control" placeholder="Patient's name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="referredBy">Referred By</label>
+            <input type="text" ngModel id="referredBy" name="referredBy" class="form-control" placeholder="Doctor's name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+              <label for="date">Date</label>
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                id="date" name="date" ngModel ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>
+          </div>
+        </div>
+        <br>
+      
+        <h6 class="heading-boxed" style="text-align:center">Widal Test</h6>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="sTyphiO">S.Typhi 'O'</label>
+            <input type="text" ngModel id="sTyphiO" name="sTyphiO" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="sTyphiH">S.Typhi 'H'</label>
+            <input type="text" ngModel id="sTyphiH" name="sTyphiH" class="form-control" required>
+          </div>
+        </div>
+        <br>
+
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="sParatyphiAH">S.Paratyphi 'AH'</label>
+                <input type="text" ngModel id="sParatyphiAH" name="sParatyphiAH" class="form-control" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="sParatyphiBH">S.Paratyphi 'BH'</label>
+                <input type="text" ngModel id="sParatyphiBH" name="sParatyphiBH" class="form-control" required>
+            </div>
+        </div>
+        <br>
+
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="opinion">Opinion</label>
+                <input type="text" ngModel id="opinion" name="opinion" class="form-control" required>
+            </div>
+        </div>        
+      
+        <Button type="submit" class="btn btn-success" style="float: right;">Save</Button>
+      
+      </form>
+    </div>
+  </div>
