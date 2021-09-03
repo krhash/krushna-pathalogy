@@ -78,7 +78,7 @@ export class UrinalysisComponent implements OnInit {
       `Other Findings   - ${urinalysisForm.otherFindings}`
     ], 10, 205)
 
-    doc.save(urinalysisForm.name.trim().toLowerCase().replace(" ", "_") + `_${urinalysisForm.date.day}_${urinalysisForm.date.month}_${urinalysisForm.date.year}`);
+    doc.save(urinalysisForm.name.trim().toLowerCase().replace(" ", "_") + `_${urinalysisForm.date.day}_${urinalysisForm.date.month}_${urinalysisForm.date.year}.pdf`);
   }
 
 }

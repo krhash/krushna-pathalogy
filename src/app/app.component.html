@@ -6,7 +6,9 @@
 <app-report-selector (selectedReportEmitter)="receiveSelectedReport($event)"></app-report-selector>
 
 <div [ngSwitch]='selectedReport'>
-  <app-urinalysis *ngSwitchCase="'URINALYSIS'"></app-urinalysis>
+  <app-anc *ngSwitchCase="'ANC'"></app-anc>
   <app-sugar *ngSwitchCase="'BLOOD SUGAR'"></app-sugar>
+  <app-haemogram *ngSwitchCase="'HAEMOGRAM'"></app-haemogram>
+  <app-urinalysis *ngSwitchCase="'URINALYSIS'"></app-urinalysis>
   <app-widal *ngSwitchCase="'WIDAL'"></app-widal>
 </div>

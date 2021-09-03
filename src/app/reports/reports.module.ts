@@ -5,17 +5,23 @@ import { FormsModule } from '@angular/forms';
 import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SugarComponent } from './sugar/sugar.component';
 import { WidalComponent } from './widal/widal.component';
+import { HaemogramComponent } from './haemogram/haemogram.component';
+import { AncComponent } from './anc/anc.component';
 
 @NgModule({
   declarations: [
     UrinalysisComponent,
     SugarComponent,
-    WidalComponent
+    WidalComponent,
+    HaemogramComponent,
+    AncComponent
   ],
   exports: [
+    AncComponent,
     UrinalysisComponent,
     SugarComponent,
-    WidalComponent
+    WidalComponent,
+    HaemogramComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-      <form #sugarForm="ngForm" (ngSubmit)="saveToPDF(sugarForm.value)">
+      <form #ancForm="ngForm" (ngSubmit)="saveToPDF(ancForm.value)">
         <h6 class="heading-boxed" style="text-align:center">Patient Details</h6>
         <div class="form-row">
           <div class="col-md-4 mb-3">
@@ -24,6 +24,35 @@
         </div>
         <br>
       
+        <h6 class="heading-boxed" style="text-align:center">ANC Report</h6>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="bloodVdrlTest">Blood VDRL Test</label>
+            <input type="text" ngModel id="bloodVdrlTest" name="bloodVdrlTest" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="bloodGroup">Blood Group</label>
+            <input type="text" ngModel id="bloodGroup" name="bloodGroup" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="rhType">RH Type</label>
+            <input type="text" ngModel id="rhType" name="rhType" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="australiaAntigen">Australia Antigen</label>
+            <input type="text" ngModel id="australiaAntigen" name="australiaAntigen" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="serumHIVTest">Serum HIV Test</label>
+            <input type="text" ngModel id="serumHIVTest" name="serumHIVTest" class="form-control" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="haemoglobin">Haemoglobin %</label>
+            <input type="text" ngModel id="haemoglobin" name="haemoglobin" class="form-control" placeholder="gm %" required>
+          </div>
+        </div>
+        <br>
+
         <h6 class="heading-boxed" style="text-align:center">Blood Sugar</h6>
         <div class="form-row">
           <div class="col-md-4 mb-3">

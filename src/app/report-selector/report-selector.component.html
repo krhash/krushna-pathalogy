@@ -3,8 +3,10 @@
       <div ngbDropdown class="d-inline-block">
         <button class="btn btn-dark" id="reportSelector" ngbDropdownToggle>{{ selectedReport || "Select Report" }}</button>
         <div ngbDropdownMenu aria-labelledby="reportSelector">
-          <button ngbDropdownItem (click)="setSelectedReport('URINALYSIS'); postSelectedReport()">Urinalysis</button>
+          <button ngbDropdownItem (click)="setSelectedReport('ANC'); postSelectedReport()">ANC</button>          
           <button ngbDropdownItem (click)="setSelectedReport('BLOOD SUGAR'); postSelectedReport()">Blood Sugar</button>
+          <button ngbDropdownItem (click)="setSelectedReport('HAEMOGRAM'); postSelectedReport()">Haemogram</button>
+          <button ngbDropdownItem (click)="setSelectedReport('URINALYSIS'); postSelectedReport()">Urinalysis</button>
           <button ngbDropdownItem (click)="setSelectedReport('WIDAL'); postSelectedReport()">Widal</button>
         </div>
       </div>

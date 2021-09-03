@@ -47,23 +47,23 @@ export class SugarComponent implements OnInit {
 
     let readings = [];
 
+    if (sugarForm.random && sugarForm.random.trim() !== "")
+    {
+      readings.push(`Random       -     ${sugarForm.random} mg %  (Normal: 80 to 120 mg %)`)
+    }
+    
     if (sugarForm.fasting && sugarForm.fasting.trim() !== "")
     {
-      readings.push(`Fasting      -     ${sugarForm.fasting} mg %  (Normal - 80 to 120 mg %)`)
+      readings.push(`Fasting      -     ${sugarForm.fasting} mg %  (Normal: 80 to 120 mg %)`)
     }
 
     if (sugarForm.postMeal && sugarForm.postMeal.trim() !== "")
     {
-      readings.push(`Post-Meal    -     ${sugarForm.postMeal} mg %  (Normal - 120 to 180 mg %)`)
-    }
-
-    if (sugarForm.random && sugarForm.random.trim() !== "")
-    {
-      readings.push(`Random       -     ${sugarForm.random} mg %  (Normal - 80 to 120 mg %)`)
+      readings.push(`Post-Meal    -     ${sugarForm.postMeal} mg %  (Normal: 120 to 180 mg %)`)
     }
 
     doc.text(readings, 10, 125);
 
-    doc.save(sugarForm.name.trim().toLowerCase().replace(" ", "_") + `_${sugarForm.date.day}_${sugarForm.date.month}_${sugarForm.date.year}`);
+    doc.save(sugarForm.name.trim().toLowerCase().replace(" ", "_") + `_${sugarForm.date.day}_${sugarForm.date.month}_${sugarForm.date.year}.pdf`);
   }
 }
