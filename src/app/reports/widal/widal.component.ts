@@ -48,6 +48,11 @@ export class WidalComponent implements OnInit {
       `OPINION                 -     ${widalForm.opinion}`
     ];
 
+    if (widalForm.peripheralSmear && widalForm.peripheralSmear !== "")
+    {
+      readings.push(`PERIPHERAL-SMEAR        -     ${widalForm.peripheralSmear}`);
+    }
+
     doc.text(readings, 10, 125);
 
     doc.save(widalForm.name.trim().toLowerCase().replace(" ", "_") + `_${widalForm.date.day}_${widalForm.date.month}_${widalForm.date.year}.pdf`);

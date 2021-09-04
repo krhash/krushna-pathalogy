@@ -39,7 +39,10 @@ export class SugarComponent implements OnInit {
 
     // Add Report Content
     doc.setFontSize(16);
-    doc.text("BLOOD SUGAR", 10, 110);
+    doc.setDrawColor(0);
+    doc.setFillColor	(211, 211, 211);
+    doc.rect(10, 105, doc.getStringUnitWidth(" BLOOD SUGAR ")*doc.getFontSize()/doc.internal.scaleFactor, 7, 'FD'); //Fill and Border
+    doc.text(" BLOOD SUGAR ", 10, 110);
     doc.setFontSize(14);
 
     let readings = [];
@@ -59,7 +62,7 @@ export class SugarComponent implements OnInit {
       readings.push(`Post-Meal    -     ${sugarForm.postMeal} mg %  (Normal: 120 to 180 mg %)`)
     }
 
-    doc.text(readings, 10, 130);
+    doc.text(readings, 10, 125);
 
     doc.save(sugarForm.name.trim().toLowerCase().replace(" ", "_") + `_${sugarForm.date.day}_${sugarForm.date.month}_${sugarForm.date.year}.pdf`);
   }
