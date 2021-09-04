@@ -21,17 +21,16 @@ export class SugarComponent implements OnInit {
       format: [297, 210],
     });
     doc.setLineHeightFactor(2);
+    doc.setFont('courier', 'bold');
 
     // Add report header
-    doc.setFont('courier', 'normal');
     doc.setFontSize(14);
-    doc.text("Name: " + sugarForm.name.trim(), 10, 50);
-    doc.text("Date: " + `${sugarForm.date.day}/${sugarForm.date.month}/${sugarForm.date.year}`, 150, 50);
-    doc.text("Referred By: " + sugarForm.referredBy.trim(), 10, 60);
+    doc.text("Name: " + sugarForm.name.trim(), 10, 45);
+    doc.text("Date: " + `${sugarForm.date.day}/${sugarForm.date.month}/${sugarForm.date.year}`, 150, 45);
+    doc.text("Referred By: " + sugarForm.referredBy.trim(), 10, 55);
 
     // Add report title
     const reportTitle = "R E P O R T";
-    doc.setFont('courier', 'bold');
     doc.setFontSize(20);
     const pageWidth = doc.internal.pageSize.width;
     const txtWidth = doc.getStringUnitWidth(reportTitle)*doc.getFontSize()/doc.internal.scaleFactor;
@@ -40,16 +39,14 @@ export class SugarComponent implements OnInit {
 
     // Add Report Content
     doc.setFontSize(16);
-    doc.setFont('courier', 'bold');
-    doc.text("Blood Sugar", 10, 110);
+    doc.text("BLOOD SUGAR", 10, 110);
     doc.setFontSize(14);
-    doc.setFont('courier', 'normal');
 
     let readings = [];
 
     if (sugarForm.random && sugarForm.random.trim() !== "")
     {
-      readings.push(`Random       -     ${sugarForm.random} mg %  (Normal: 80 to 120 mg %)`)
+      readings.push(`Random       -     ${sugarForm.random} mg %  (Normal: Upto 160 mg %)`)
     }
     
     if (sugarForm.fasting && sugarForm.fasting.trim() !== "")
@@ -62,7 +59,7 @@ export class SugarComponent implements OnInit {
       readings.push(`Post-Meal    -     ${sugarForm.postMeal} mg %  (Normal: 120 to 180 mg %)`)
     }
 
-    doc.text(readings, 10, 125);
+    doc.text(readings, 10, 130);
 
     doc.save(sugarForm.name.trim().toLowerCase().replace(" ", "_") + `_${sugarForm.date.day}_${sugarForm.date.month}_${sugarForm.date.year}.pdf`);
   }

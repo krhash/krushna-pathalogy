@@ -1,14 +1,27 @@
 <nav class="navbar navbar-dark bg-dark">
   <header class="navbar-brand" style="font-size: 1.6rem">Krushna Pathalogy</header>
 </nav>
-<br>
 
-<app-report-selector (selectedReportEmitter)="receiveSelectedReport($event)"></app-report-selector>
+<div class="card bg-dark mb-3">
+  <div class="card-header">
+    <app-report-selector (selectedReportEmitter)="receiveSelectedReport($event)"></app-report-selector>
+  </div>
 
-<div [ngSwitch]='selectedReport'>
-  <app-anc *ngSwitchCase="'ANC'"></app-anc>
-  <app-sugar *ngSwitchCase="'BLOOD SUGAR'"></app-sugar>
-  <app-haemogram *ngSwitchCase="'HAEMOGRAM'"></app-haemogram>
-  <app-urinalysis *ngSwitchCase="'URINALYSIS'"></app-urinalysis>
-  <app-widal *ngSwitchCase="'WIDAL'"></app-widal>
+  <div [ngSwitch]='selectedReport'>
+    <div class="card-body" *ngSwitchCase="'ANC'">
+      <app-anc></app-anc>
+    </div>
+    <div class="card-body" *ngSwitchCase="'BLOOD SUGAR'">
+      <app-sugar></app-sugar>
+    </div>
+    <div class="card-body" *ngSwitchCase="'HAEMOGRAM'">
+      <app-haemogram></app-haemogram>
+    </div>
+    <div class="card-body" *ngSwitchCase="'URINALYSIS'">
+      <app-urinalysis></app-urinalysis>
+    </div>
+    <div class="card-body bg-dark" *ngSwitchCase="'WIDAL'">
+      <app-widal></app-widal>
+    </div>
+  </div>
 </div>
