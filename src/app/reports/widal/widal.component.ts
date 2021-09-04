@@ -46,7 +46,8 @@ export class WidalComponent implements OnInit {
       `S.Typhi ' O '           -     ${widalForm.sTyphiO}`,
       `S.Typhi ' H '           -     ${widalForm.sTyphiH}`,
       `S.Paratyphi ' AH '      -     ${widalForm.sParatyphiAH}`,
-      `S.Paratyphi ' BH '      -     ${widalForm.sParatyphiBH}`
+      `S.Paratyphi ' BH '      -     ${widalForm.sParatyphiBH}`,
+      `OPINION                 -     ${widalForm.opinion}`
     ];
 
     doc.text(readings, 10, 125);
