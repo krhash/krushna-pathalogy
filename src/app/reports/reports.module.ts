@@ -7,6 +7,7 @@ import { SugarComponent } from './sugar/sugar.component';
 import { WidalComponent } from './widal/widal.component';
 import { HaemogramComponent } from './haemogram/haemogram.component';
 import { AncComponent } from './anc/anc.component';
+import { DengueRapidComponent } from './dengue-rapid/dengue-rapid.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +15,16 @@ import { AncComponent } from './anc/anc.component';
     SugarComponent,
     WidalComponent,
     HaemogramComponent,
-    AncComponent
+    AncComponent,
+    DengueRapidComponent
   ],
   exports: [
     AncComponent,
     UrinalysisComponent,
     SugarComponent,
     WidalComponent,
-    HaemogramComponent
+    HaemogramComponent,
+    DengueRapidComponent
   ],
   imports: [
     CommonModule,

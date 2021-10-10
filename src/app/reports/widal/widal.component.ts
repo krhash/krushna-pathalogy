@@ -40,13 +40,32 @@ export class WidalComponent implements OnInit {
     // Add Report Content
     doc.setFontSize(14);
 
-    let readings = [
-      `S.Typhi ' O '           -     ${widalForm.sTyphiO}`,
-      `S.Typhi ' H '           -     ${widalForm.sTyphiH}`,
-      `S.Paratyphi ' AH '      -     ${widalForm.sParatyphiAH}`,
-      `S.Paratyphi ' BH '      -     ${widalForm.sParatyphiBH}`,
-      `OPINION                 -     ${widalForm.opinion}`
-    ];
+    let readings = []
+
+    if (widalForm.sTyphiO && widalForm.sTyphiO !== "")
+    {
+      readings.push(`S.Typhi ' O '           -     ${widalForm.sTyphiO}`);
+    }
+
+    if (widalForm.sTyphiH && widalForm.sTyphiH !== "")
+    {
+      readings.push(`S.Typhi ' H '           -     ${widalForm.sTyphiH}`);
+    }
+
+    if (widalForm.sParatyphiAH && widalForm.sParatyphiAH !== "")
+    {
+      readings.push(`S.Paratyphi ' AH '      -     ${widalForm.sParatyphiAH}`);
+    }
+
+    if (widalForm.sParatyphiBH && widalForm.sParatyphiBH !== "")
+    {
+      readings.push(`S.Paratyphi ' BH '      -     ${widalForm.sParatyphiBH}`);
+    }
+
+    if (widalForm.opinion && widalForm.opinion !== "")
+    {
+      readings.push(`OPINION                 -     ${widalForm.opinion}`);
+    }
 
     if (widalForm.peripheralSmear && widalForm.peripheralSmear !== "")
     {

@@ -1,0 +1,83 @@
+<div class="card bg-light mb-3">
+    <div class="card-body">
+      <form #dengueRapidForm="ngForm" (ngSubmit)="saveToPDF(dengueRapidForm.value)">
+        <h6 class="heading-boxed" style="text-align:center">Patient Details</h6>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="name">Name</label>
+            <input type="text" ngModel id="name" name="name" class="form-control" placeholder="Patient's name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="referredBy">Referred By</label>
+            <input type="text" ngModel id="referredBy" name="referredBy" class="form-control" placeholder="Doctor's name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+              <label for="date">Date</label>
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                id="date" name="date" ngModel ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                </div>
+              </div>
+          </div>
+        </div>
+        <br>
+      
+        <h6 class="heading-boxed" style="text-align:center">NS1</h6>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="testNs1">Test</label>
+            <input type="text" ngModel id="testNs1" name="testNs1" class="form-control" placeholder="EVALUATION OF DENGUE NS1" disabled>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="resultNs1">NS1 Result</label>
+            <!-- <input type="text" ngModel id="resultNs1" name="resultNs1" class="form-control" required> -->
+            <select class="form-control" ngModel id="resultNs1" name="resultNs1">
+                <option [ngValue]="null"></option>
+                <option>NEGATIVE TEST FOR DENGUE NS1</option>
+                <option>POSITIVE TEST FOR DENGUE NS1</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="methodNs1">Method</label>
+                <input type="text" ngModel id="methodNs1" name="methodNs1" class="form-control" placeholder="IMMUNOCHROMATOGRAPHY RAPID TEST" disabled>
+            </div>
+        </div>
+
+        <h6 class="heading-boxed" style="text-align:center">IgG - IgM</h6>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="testIggIgm">Test</label>
+            <input type="text" ngModel id="testIggIgm" name="testIggIgm" class="form-control" placeholder="EVALUATION OF IgG - IgM ANTIBODIES TO DENGUE VIRUS" disabled>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="resultIgg">IgG Result</label>
+            <select class="form-control" ngModel id="resultIgg"  name="resultIgg">
+                <option [ngValue]="null"></option>
+                <option>NEGATIVE TEST FOR IgG ANTIBODIES</option>
+                <option>POSITIVE TEST FOR IgG ANTIBODIES</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="resultIgm">IgM Result</label>
+            <select class="form-control" ngModel id="resultIgm"  name="resultIgm">
+                <option [ngValue]="null"> </option>
+                <option>NEGATIVE TEST FOR IgM ANTIBODIES</option>
+                <option>POSITIVE TEST FOR IgM ANTIBODIES</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="methodIggIgm">Method</label>
+            <input type="text" ngModel id="methodIggIgm" name="methodIggIgm" class="form-control" placeholder="IMMUNOCHROMATOGRAPHY RAPID TEST" disabled>
+          </div>
+        </div>
+      
+        <Button type="submit" class="btn btn-success" style="float: right;">Save</Button>
+
+        
+      </form>
+    </div>
+  </div>
