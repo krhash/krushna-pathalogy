@@ -56,44 +56,57 @@ export class HaemogramComponent implements OnInit {
     doc.setFont('courier', 'normal');
     doc.text(hbDetails, 10, 133);
 
-    let plateletReading = [
-      ` PLATELET COUNT                -     ${haemogramForm.platelet} Lac/cmm`
-    ];
-    doc.setLineHeightFactor(2);
-    doc.setFont('courier', 'bold');
-    doc.text(plateletReading, 10, 160);
+    let yTextOffset = 160;
 
-    let plateletDetails = [
-      `                                     Normal: 1.5 to 4 Lac/cmm`
-    ];
-    doc.setLineHeightFactor(0.9);
-    doc.setFont('courier', 'normal');
-    doc.text(plateletDetails, 10, 168);
+    if (haemogramForm.platelet && haemogramForm.platelet.trim() !== "") {
+      let plateletReading = [
+        ` PLATELET COUNT                -     ${haemogramForm.platelet} Lac/cmm`
+      ];
+      doc.setLineHeightFactor(2);
+      doc.setFont('courier', 'bold');
+      doc.text(plateletReading, 10, yTextOffset);
+      yTextOffset += 8;
+  
+      let plateletDetails = [
+        `                                     Normal: 1.5 to 4 Lac/cmm`
+      ];
+      doc.setLineHeightFactor(0.9);
+      doc.setFont('courier', 'normal');
+      doc.text(plateletDetails, 10, yTextOffset);
+      yTextOffset += 22;
+    }
+    
+    if (haemogramForm.bloodGroup && haemogramForm.bloodGroup.trim() !== "") {
+      let otherReadings = [
+        ` BLOOD GROUP                   -     ' ${haemogramForm.bloodGroup} '`,
+        ` Rh. FACTOR                    -     ${haemogramForm.rhFactor}`,
+      ];
+      doc.setLineHeightFactor(2.5);
+      doc.setFont('courier', 'bold');
+      doc.text(otherReadings, 10, yTextOffset);
+      yTextOffset += 25;
+    }
 
-    let otherReadings = [
-      ` BLOOD GROUP                   -     ' ${haemogramForm.bloodGroup} '`,
-      ` Rh. FACTOR                    -     ${haemogramForm.rhFactor}`,
-    ];
-    doc.setLineHeightFactor(2.5);
-    doc.setFont('courier', 'bold');
-    doc.text(otherReadings, 10, 190);
-
-    let esrReading = [
-      ` E.S.R                         -     ${haemogramForm.esr} mm`
-    ];
-    doc.setLineHeightFactor(2);
-    doc.setFont('courier', 'bold');
-    doc.text(esrReading, 10, 215);
-
-    let esrDetails = [
-      `(westegren, 1hr.)                    Normal:`,
-      `                                     Male   - 0 to 5 mm`,
-      `                                     Female - 0 to 7 mm`
-    ];
-    doc.setLineHeightFactor(0.9);
-    doc.setFont('courier', 'normal');
-    doc.text(esrDetails, 10, 223);
-
+    
+    if (haemogramForm.esr && haemogramForm.esr.trim() !== "") {
+      let esrReading = [
+        ` E.S.R                         -     ${haemogramForm.esr} mm`
+      ];
+      doc.setLineHeightFactor(2);
+      doc.setFont('courier', 'bold');
+      doc.text(esrReading, 10, yTextOffset);
+      yTextOffset += 8;
+  
+      let esrDetails = [
+        `(westegren, 1hr.)                    Normal:`,
+        `                                     Male   - 0 to 5 mm`,
+        `                                     Female - 0 to 7 mm`
+      ];
+      doc.setLineHeightFactor(0.9);
+      doc.setFont('courier', 'normal');
+      doc.text(esrDetails, 10, yTextOffset);
+    }
+    
     doc.save(haemogramForm.name.trim().toLowerCase().replace(" ", "_") + `_${haemogramForm.date.day}_${haemogramForm.date.month}_${haemogramForm.date.year}.pdf`);
   }
 }

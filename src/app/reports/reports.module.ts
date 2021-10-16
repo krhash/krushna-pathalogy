@@ -8,6 +8,7 @@ import { WidalComponent } from './widal/widal.component';
 import { HaemogramComponent } from './haemogram/haemogram.component';
 import { AncComponent } from './anc/anc.component';
 import { DengueRapidComponent } from './dengue-rapid/dengue-rapid.component';
+import { MalariaRapidComponent } from './malaria-rapid/malaria-rapid.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DengueRapidComponent } from './dengue-rapid/dengue-rapid.component';
     WidalComponent,
     HaemogramComponent,
     AncComponent,
-    DengueRapidComponent
+    DengueRapidComponent,
+    MalariaRapidComponent
   ],
   exports: [
     AncComponent,
@@ -24,7 +26,8 @@ import { DengueRapidComponent } from './dengue-rapid/dengue-rapid.component';
     SugarComponent,
     WidalComponent,
     HaemogramComponent,
-    DengueRapidComponent
+    DengueRapidComponent,
+    MalariaRapidComponent
   ],
   imports: [
     CommonModule,
